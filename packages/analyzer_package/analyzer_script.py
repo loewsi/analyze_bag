@@ -1,6 +1,6 @@
 import rosbag
 import numpy as np
-bag = rosbag.Bag('/bags/example_rosbag_H3.bag')
+bag = rosbag.Bag('/bags/amod20-rh3-ex-record-silvan-loew.bag')
 readtopics = list(bag.get_type_and_topic_info()[1].keys())
 
 for i in range(0, np.size(readtopics)):
@@ -20,5 +20,6 @@ for i in range(0, np.size(readtopics)):
     print("    average:", "%.2f" % (np.average(dt)))
     print("    media:", "%.2f" % (np.median(dt)))
     print(" ")
+bag.close()
 
 
